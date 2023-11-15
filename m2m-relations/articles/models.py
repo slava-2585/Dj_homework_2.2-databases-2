@@ -7,6 +7,7 @@ class Article(models.Model):
     text = models.TextField(verbose_name='Текст')
     published_at = models.DateTimeField(verbose_name='Дата публикации')
     image = models.ImageField(null=True, blank=True, verbose_name='Изображение',)
+    tags = models.ManyToManyField('Tag', through='Scope')
 
     class Meta:
         verbose_name = 'Статья'
@@ -19,7 +20,6 @@ class Article(models.Model):
 class Tag(models.Model):
 
     name = models.CharField(max_length=256, verbose_name="Название")
-    articles = models.ManyToManyField(Article, through='Scope')
 
     class Meta:
         verbose_name = 'Тег'
