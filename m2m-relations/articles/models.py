@@ -30,7 +30,7 @@ class Tag(models.Model):
 
 
 class Scope(models.Model):
-    ismain = models.BooleanField()
+    is_main = models.BooleanField()
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
     tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
 
