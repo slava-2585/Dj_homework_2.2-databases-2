@@ -23,6 +23,7 @@ class ScopeInlineFormset(forms.BaseInlineFormSet):
 class ScopeInline(admin.TabularInline):
     model = Scope
     formset = ScopeInlineFormset
+    extra = 1
 
 
 
